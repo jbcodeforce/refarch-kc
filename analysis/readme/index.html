@@ -1,128 +1,777 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Analysis - Container Shipment EDA reference implementation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-  <link href="../../extra.css" rel="stylesheet">
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Analysis";
-    var mkdocs_page_input_path = "analysis/readme.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
-</head>
 
-<body class="wy-body-for-nav" role="document">
 
-  <div class="wy-grid-for-nav">
 
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-      <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> Container Shipment EDA reference implementation</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
+    
+    
+      
+        <title>Event storming analysis - Container Shipment EDA reference implementation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#container-shipment-analysis" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Container Shipment EDA reference implementation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
       </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../..">Home</a>
-	    </li>
+            <span class="md-header-nav__topic">
+              Container Shipment EDA reference implementation
+            </span>
+            <span class="md-header-nav__topic">
+              Event storming analysis
+            </span>
           
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Business Problem Statement</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../introduction/">Introduction</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">Analysis</a>
-    <ul class="subnav">
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
             
-    <li class="toctree-l3"><a href="#container-shipment-analysis">Container Shipment Analysis</a></li>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Container Shipment EDA reference implementation" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Container Shipment EDA reference implementation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
     
-        <ul>
-        
-            <li><a class="toctree-l4" href="#output-from-domain-driven-design-workshop">Output from Domain Driven Design workshop</a></li>
-        
-            <li><a class="toctree-l4" href="#high-level-view-of-the-shipment-process-flow">High level view of the shipment process flow</a></li>
-        
-            <li><a class="toctree-l4" href="#event-storming-analysis-of-the-container-shipping-flow">Event storming analysis of the container shipping flow</a></li>
-        
-        </ul>
-    
+      
+      
+      
 
-    </ul>
-                </li>
-    </ul>
-	    </li>
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Business Problem Statement
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Business Problem Statement
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
-        </ul>
-      </div>
-      &nbsp;
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Event storming analysis
+      </label>
+    
+    <a href="./" title="Event storming analysis" class="md-nav__link md-nav__link--active">
+      Event storming analysis
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#output-from-domain-driven-design-workshop" title="Output from Domain Driven Design workshop" class="md-nav__link">
+    Output from Domain Driven Design workshop
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#personas-for-each-stakeholder" title="Personas for each stakeholder" class="md-nav__link">
+    Personas for each stakeholder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mvp-hills" title="MVP hills" class="md-nav__link">
+    MVP hills
+  </a>
+  
+</li>
+        
+      </ul>
     </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
+  
+</li>
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">Container Shipment EDA reference implementation</a>
-      </nav>
-
+        <li class="md-nav__item">
+  <a href="#high-level-view-of-the-shipment-process-flow" title="High level view of the shipment process flow" class="md-nav__link">
+    High level view of the shipment process flow
+  </a>
+  
+</li>
       
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../..">Docs</a> &raquo;</li>
+        <li class="md-nav__item">
+  <a href="#event-storming-analysis-of-the-container-shipping-flow" title="Event storming analysis of the container shipping flow" class="md-nav__link">
+    Event storming analysis of the container shipping flow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-capture-the-domain-event-timeline-swim-lanes-and-key-phases" title="Step 1: Capture the Domain Event Timeline, swim lanes and key phases" class="md-nav__link">
+    Step 1: Capture the Domain Event Timeline, swim lanes and key phases
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-event-timeline-section-1" title="Container shipping event timeline section 1" class="md-nav__link">
+    Container shipping event timeline section 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-event-timeline-section-2" title="Container shipping event timeline section 2" class="md-nav__link">
+    Container shipping event timeline section 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-event-timeline-section-3" title="Container shipping event timeline section 3" class="md-nav__link">
+    Container shipping event timeline section 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-event-timeline-section-4" title="Container shipping event timeline section 4" class="md-nav__link">
+    Container shipping event timeline section 4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-event-timeline-section-5" title="Container shipping event timeline section 5" class="md-nav__link">
+    Container shipping event timeline section 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-event-timeline-sections-6-and-7" title="Container shipping event timeline sections 6 and 7" class="md-nav__link">
+    Container shipping event timeline sections 6 and 7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-identify-commands-and-event-linkages" title="Step 2: Identify commands and event linkages" class="md-nav__link">
+    Step 2: Identify commands and event linkages
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-commands-for-order-placement-and-land-transport-setup" title="Container shipping Commands for order placement and land transport setup" class="md-nav__link">
+    Container shipping Commands for order placement and land transport setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-event-linkages-for-order-placement-setup" title="Container shipping  event linkages for order placement setup" class="md-nav__link">
+    Container shipping  event linkages for order placement setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-commands-for-pickup-at-manufacturers-location" title="Container shipping commands for pickup at Manufacturer's location" class="md-nav__link">
+    Container shipping commands for pickup at Manufacturer's location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-commands-in-port-to-port-blue-water-section-of-the-event-time-line" title="Container shipping commands in port to port (Blue water) section of the event time line" class="md-nav__link">
+    Container shipping commands in port to port (Blue water) section of the event time line
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-decision-data-predictive-insights-and-insight-storming" title="Step 3: Decision data, predictive insights and insight storming:" class="md-nav__link">
+    Step 3: Decision data, predictive insights and insight storming:
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-event-stream-processing-diagram-including-event-stream-processing-flows" title="Container shipping event stream processing diagram - including event stream processing flows" class="md-nav__link">
+    Container shipping event stream processing diagram - including event stream processing flows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-event-stream-processing-with-predictive-insight-flows-included" title="Container shipping event stream processing with predictive Insight flows included" class="md-nav__link">
+    Container shipping event stream processing with predictive Insight flows included
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-stream-processing-for-insights-relating-to-the-ship" title="Event stream processing for insights relating to the ship" class="md-nav__link">
+    Event stream processing for insights relating to the ship
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-commands-linkages-data-and-context-for-order-placement" title="Step 4: Commands, linkages, data and context for order placement" class="md-nav__link">
+    Step 4: Commands, linkages, data and context for order placement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
     
       
-        
-          <li>Business Problem Statement &raquo;</li>
-        
       
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../design/readme/" title="Design considerations and microservice identifications" class="md-nav__link">
+      Design considerations and microservice identifications
+    </a>
+  </li>
+
     
-    <li>Analysis</li>
-    <li class="wy-breadcrumbs-aside">
       
-    </li>
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../design/architecture/" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Deployments
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Deployments
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../deployments/reposlist/" title="Related repositories" class="md-nav__link">
+      Related repositories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../deployments/local.md" title="Run locally" class="md-nav__link">
+      Run locally
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../deployments/iks/" title="Run on IBM Cloud Kubernetes Services" class="md-nav__link">
+      Run on IBM Cloud Kubernetes Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../deployments/icp.md" title="Run on IBM Cloud Private" class="md-nav__link">
+      Run on IBM Cloud Private
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../demo/readme/" title="Demonstration" class="md-nav__link">
+      Demonstration
+    </a>
+  </li>
+
+    
   </ul>
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#output-from-domain-driven-design-workshop" title="Output from Domain Driven Design workshop" class="md-nav__link">
+    Output from Domain Driven Design workshop
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#personas-for-each-stakeholder" title="Personas for each stakeholder" class="md-nav__link">
+    Personas for each stakeholder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mvp-hills" title="MVP hills" class="md-nav__link">
+    MVP hills
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-view-of-the-shipment-process-flow" title="High level view of the shipment process flow" class="md-nav__link">
+    High level view of the shipment process flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-storming-analysis-of-the-container-shipping-flow" title="Event storming analysis of the container shipping flow" class="md-nav__link">
+    Event storming analysis of the container shipping flow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-capture-the-domain-event-timeline-swim-lanes-and-key-phases" title="Step 1: Capture the Domain Event Timeline, swim lanes and key phases" class="md-nav__link">
+    Step 1: Capture the Domain Event Timeline, swim lanes and key phases
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-event-timeline-section-1" title="Container shipping event timeline section 1" class="md-nav__link">
+    Container shipping event timeline section 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-event-timeline-section-2" title="Container shipping event timeline section 2" class="md-nav__link">
+    Container shipping event timeline section 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-event-timeline-section-3" title="Container shipping event timeline section 3" class="md-nav__link">
+    Container shipping event timeline section 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-event-timeline-section-4" title="Container shipping event timeline section 4" class="md-nav__link">
+    Container shipping event timeline section 4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-event-timeline-section-5" title="Container shipping event timeline section 5" class="md-nav__link">
+    Container shipping event timeline section 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-event-timeline-sections-6-and-7" title="Container shipping event timeline sections 6 and 7" class="md-nav__link">
+    Container shipping event timeline sections 6 and 7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-identify-commands-and-event-linkages" title="Step 2: Identify commands and event linkages" class="md-nav__link">
+    Step 2: Identify commands and event linkages
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-commands-for-order-placement-and-land-transport-setup" title="Container shipping Commands for order placement and land transport setup" class="md-nav__link">
+    Container shipping Commands for order placement and land transport setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-event-linkages-for-order-placement-setup" title="Container shipping  event linkages for order placement setup" class="md-nav__link">
+    Container shipping  event linkages for order placement setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-commands-for-pickup-at-manufacturers-location" title="Container shipping commands for pickup at Manufacturer's location" class="md-nav__link">
+    Container shipping commands for pickup at Manufacturer's location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-commands-in-port-to-port-blue-water-section-of-the-event-time-line" title="Container shipping commands in port to port (Blue water) section of the event time line" class="md-nav__link">
+    Container shipping commands in port to port (Blue water) section of the event time line
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-decision-data-predictive-insights-and-insight-storming" title="Step 3: Decision data, predictive insights and insight storming:" class="md-nav__link">
+    Step 3: Decision data, predictive insights and insight storming:
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-event-stream-processing-diagram-including-event-stream-processing-flows" title="Container shipping event stream processing diagram - including event stream processing flows" class="md-nav__link">
+    Container shipping event stream processing diagram - including event stream processing flows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-shipping-event-stream-processing-with-predictive-insight-flows-included" title="Container shipping event stream processing with predictive Insight flows included" class="md-nav__link">
+    Container shipping event stream processing with predictive Insight flows included
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-stream-processing-for-insights-relating-to-the-ship" title="Event stream processing for insights relating to the ship" class="md-nav__link">
+    Event stream processing for insights relating to the ship
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-commands-linkages-data-and-context-for-order-placement" title="Step 4: Commands, linkages, data and context for order placement" class="md-nav__link">
+    Step 4: Commands, linkages, data and context for order placement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
               
+                
+                
                 <h1 id="container-shipment-analysis">Container Shipment Analysis</h1>
-<p>This section defines the overall steps in the methodology to analyse a specific global shipping example and derive the event driven solution. We combined some elements of the <a href="https://www.ibm.com/cloud/garage/content/think/practice_design_thinking/">design thinking</a> methodology with the <a href="https://github.com/ibm-cloud-architecture/refarch-eda/blob/master/docs/methodology/readme.md">event storming</a> and <a href="https://www.ibm.com/cloud/garage/content/code/domain-driven-design/">domain driven design</a> to extract the following analysis of the business domain.</p>
+<p>This section defines the overall steps in the methodology to analyse a specific global shipping example and derive the event driven solution. We combined some elements of the <a href="https://www.ibm.com/cloud/garage/content/think/practice_design_thinking/">design thinking</a> methodology with the <a href="https://www.ibm.com/cloud/garage/architectures/eventDrivenArchitecture/event-storming-methodology">event storming</a> and <a href="https://www.ibm.com/cloud/garage/content/code/domain-driven-design/">domain driven design</a> to extract the following analysis of the business domain.</p>
 <h2 id="output-from-domain-driven-design-workshop">Output from Domain Driven Design workshop</h2>
 <p>From the design thinking workshop we extracted the following artifacts:
 <em> a persona list
@@ -174,33 +823,37 @@
 <p>The challenges listed in the persona table above identify a possible set of MVP hills for this end to end solution. The event storming methodology described below will lead to picking out specific subareas of the solution with most value as initial MVPs.</p>
 <h2 id="high-level-view-of-the-shipment-process-flow">High level view of the shipment process flow</h2>
 <p>At the high level the shipment process flow is suggested and illustrated in the diagram below.</p>
-<p><img alt="" src="../shipment-bp1.png" /></p>
-<p>For the purposes of showing how to design a reference EDA solution we select on a simple subcase of all actual and possible variations of the global container flow. Very high level steps in this flow are as follows: 
-1. Retailer and manufacturer interact to create agreement to deliver specific goods in a container from manufacturer's location to retailer's location with an expected arrival date. 
-1. Manufacturer places shipping order with 'Shipping Company' to pickup container and deliver under the condition expected above.
-1. Shipping Company arranges for land transport to pick up loaded container and required documentation from Manufacturer and deliver the container to dockside at source port (adjacent to Maufacturer) for loading onto container carrier. 
-1. Shipping company works with Customs Officer at source port to clear outbound container for export.
-1. When Container Ship is in dock at source port Shipping company arranges with Port Dock Operator to load and unload containers at this port.
-1. Loaded container ship leaves dock in source port adjacent to Manufacturer and sails to destination port.
-1. Container ship arrives at destination port (adjacent to Retailer) and queues to enter Port Docking area. 
-1. Shipment company arranges with Port Docking Operator to unload specific containers needed at this port and reload additional ones for next shipping leg.
-1. Shipment company works with Import Export office at destination port to clear and collect any import duties.
-1. Shipment company works with Land Transporter at destination port to pick up container and deliver to Retailer.
-1. Container is delivered by Land Transporter to Retailer's location - transaction is complete.</p>
+<p><img alt="shipment-bp1" src="../shipment-bp1.png" /></p>
+<p>For the purposes of showing how to design a reference EDA solution we select on a simple subcase of all actual and possible variations of the global container flow. Very high level steps in this flow are as follows: </p>
+<ol>
+<li>Retailer and manufacturer interact to create agreement to deliver specific goods in a container from manufacturer's location to retailer's location with an expected arrival date. </li>
+<li>Manufacturer places shipping order with 'Shipping Company' to pickup container and deliver under the condition expected above.</li>
+<li>Shipping Company arranges for land transport to pick up loaded container and required documentation from Manufacturer and deliver the container to dockside at source port (adjacent to Maufacturer) for loading onto container carrier. </li>
+<li>Shipping company works with Customs Officer at source port to clear outbound container for export.</li>
+<li>When Container Ship is in dock at source port Shipping company arranges with Port Dock Operator to load and unload containers at this port.</li>
+<li>Loaded container ship leaves dock in source port adjacent to Manufacturer and sails to destination port.</li>
+<li>Container ship arrives at destination port (adjacent to Retailer) and queues to enter Port Docking area. </li>
+<li>Shipment company arranges with Port Docking Operator to unload specific containers needed at this port and reload additional ones for next shipping leg.</li>
+<li>Shipment company works with Import Export office at destination port to clear and collect any import duties.</li>
+<li>Shipment company works with Land Transporter at destination port to pick up container and deliver to Retailer.</li>
+<li>Container is delivered by Land Transporter to Retailer's location - transaction is complete.</li>
+</ol>
 <h2 id="event-storming-analysis-of-the-container-shipping-flow">Event storming analysis of the container shipping flow</h2>
 <p>We use the <a href="https://github.com/ibm-cloud-architecture/refarch-eda/blob/master/docs/methodology/readme.md">event storming</a> analysis to move from the high level description of a business process flow above to a specific event timeline with identified bounded contexts each of which could be a target MVP component linked through EDA architecture. </p>
 <p>Event storming is a rapid lightweight design process enabling the team of business owners and stake holders, architects and IT specialists to fomalize a complex solution in a clearly communicable event timeline. This step is effective in developing event-based microservices linked through an EDA architecture in one or more MVP contexts. </p>
 <p>Steps in an eight hours event storming analysis workshop of the container shipping example are illustrated and described below. </p>
-<h3 id="event-storming-the-container-shipment-example-part1-capture-the-domain-event-timeline-swim-lanes-and-key-phases">Event storming the container shipment example part1: capture the Domain Event Timeline, swim lanes and key phases</h3>
-<p>(This section of the example description covers activities identified as event storming workshop steps 1,2,3 in the generic description of the <a href="https://github.com/ibm-cloud-architecture/refarch-eda/blob/master/docs/methodology/readme.md">event storming method</a>). </p>
-<p>The initial step in event storming analysis is to capture all events, things which have happened at a point in time, and organize them into a timeline. 
-<em> each event goes on an orange "sticky note" 
-</em> parallel or independent processes may be separated with blue horizontal swim lanes
-* critical event indicate a new stage, or pivot, in the flow shown with vertical blue bars.</p>
+<h3 id="step-1-capture-the-domain-event-timeline-swim-lanes-and-key-phases">Step 1: Capture the Domain Event Timeline, swim lanes and key phases</h3>
+<p>(This section of the example description covers activities identified as event storming workshop steps 1,2,3 in the generic description of the <a href="https://www.ibm.com/cloud/garage/architectures/eventDrivenArchitecture/event-storming-methodology">event storming method</a>. </p>
+<p>The initial step in event storming analysis is to capture all events, things which have happened at a point in time, and organize them into a timeline:</p>
+<ul>
+<li>each event goes on an orange "sticky note" </li>
+<li>parallel or independent processes may be separated with blue horizontal swim lanes</li>
+<li>critical event indicate a new stage, or pivot, in the flow shown with vertical blue bars.</li>
+</ul>
 <p>For the global shipment example described at a very high level above we came up with an event timeline shown in the set of diagrams below.
 (The event storming process captures these event timeline sections in charts on walls around the meeting room). </p>
 <h4 id="container-shipping-event-timeline-section-1">Container shipping event timeline section 1</h4>
-<p><img src="ship-dom-evt1.png" width="700"></p>
+<p><img alt="ship-dom-evt1" src="../ship-dom-evt1.png" /></p>
 <p>This section of the event time line deals with initial contracts to ship container and startup actions - specifically:
 <em> Retailer and Manufacturer settling on an initial order for delivery of goods in a container.
 </em> Manufacturer placing order for shipment with Shipping Company.
@@ -208,17 +861,19 @@
 </em> Container ship approach source port adjacent to Manufacturer's location. </p>
 <p>The events are organized into separate swim lanes for Manufacturer, Retailer and Ship perspectives operating in parallel. </p>
 <p>Swim lanes help to clearly separate ship events as it approaches the source port from container specific events with agreements to ship etc. There is no time coupling or precise causality between events in these two swim lanes.</p>
-<p>The red note is a comment.
-* In this case we make the particular simplification to limit the scenario to shipping complete containers only. This avoids having to deal with additional warehousing, container load aggregation and packing events - together with correspondng unpacking and disaggregation.</p>
+<p>The red sticky note is a comment.</p>
+<ul>
+<li>In this case we make the particular simplification to limit the scenario to shipping complete containers only. This avoids having to deal with additional warehousing, container load aggregation and packing events - together with correspondng unpacking and disaggregation.</li>
+</ul>
 <h4 id="container-shipping-event-timeline-section-2">Container shipping event timeline section 2</h4>
-<p><img src="ship-dom-evt2.png" width="700"></p>
+<p><img alt="ship-dom-evt2" src="../ship-dom-evt2.png" /></p>
 <p>This section continues event time line development with a swim lane now focussing on loading and pickup of a specific container at the Manufacturer's location and its delivery to the source port dockside. </p>
 <p>There is a critical event (indicated by vertical blue bar) separating the "source dockside" phase of the solution. Before this critical event we are dealing with container specific activities in collecting and transporting the container from Manufacturer's location to dockside. 
 In the following dockside phase there are interactions with Customs Officer to get the container cleared for export. </p>
 <p>The Manufacturer will need an empty container (refrigerated if necessary for the shipment of interest) to load the goods into. We show an event for empty container being delivered. The solution is simplified if we assume that the Manufacture has a pool of empty containers always available. Alternatively this can be analyzed fully in some more complete generalized version of the solution. </p>
 <p>When the container arrives at source port dockside it may or may not be intime for the cutoff time required by the Customs Officer to get containers cleared for export before the scheduled departure of a particular container ship. If the cutoff deadline is missed the shipment will need to be rebooked on a later container ship and the client Manufacturer notified of expected delay in delivery. </p>
 <h4 id="container-shipping-event-timeline-section-3">Container shipping event timeline section 3</h4>
-<p><img src="ship-dom-evt3.png" width="700"></p>
+<p><img alt="ship-dom-evt3" src="../ship-dom-evt3.png" /></p>
 <p>This section continues the event timelines with swim lanes relating to a specific container shipment and also to the movement of a ship potentially carrying hundreds of containers.</p>
 <p>It introduces two new critical events:
 <em> The Customs decision phase of event ends with a specific decision to clear a container for export or not, or possibly a request for additional inspecions or documents requiring more decision time 
@@ -231,27 +886,31 @@ In the following dockside phase there are interactions with Customs Officer to g
   * Now on arrival at the source port anchorage area, the ship requests permission to moor at an available dock facility
   * The critical event when a ship is cleared and moored at a dock hence ready to start unloading and loading containers is the start of the next event phase - container loading (and unloading)</p>
 <h4 id="container-shipping-event-timeline-section-4">Container shipping event timeline section 4</h4>
-<p><img src="ship-dom-evt4.png" width="700"></p>
+<p><img alt="ship-dom-evt4" src="../ship-dom-evt4.png" /></p>
 <p>This segment of the event timeline deals with a single swim lane for the ship while it is moored in a dock facility at the source port, is having arriving containers destined for this port unloaded and new containers being loaded at his port. The port dock facility operator is coordinating many events in the yard to perform load unload operations. These steps - as noted in a red discussion "sticky" in the event storming timeline are repeated for many containers. The time line presented here captures representative high level events. It is straightforward to extend the analysis to open up additional layers of detail touching on operational optimizations and coordination at the cost of addiional complexity not essential to our reference example here.</p>
 <p>Some of the events in this phase are now specialized to address needs of particular type of container - refrigerated containers - able to maintain specific temperature bounds and to report on their global location and temperature status on a continuous basis. This is a natural outcome of the event storming analysis involving free parallel capture of event types by a team of individuals with different points of view and interests. Working forward towards one or more MVP implementations of key components of this solution linked through EDA architecture we will need to characterize event types more uniformly end to end but imposing that level of consistency checking on the initial event storming process will slow down progess without providing significant benefit.</p>
 <h4 id="container-shipping-event-timeline-section-5">Container shipping event timeline section 5</h4>
-<p><img src="ship-dom-evt5.png" width="700"></p>
+<p><img alt="ship-dom-evt5" src="../ship-dom-evt5.png" /></p>
 <p>This segment of the event timeline captures events which occure in the blue water phase of the shipping, after the container ship has left the source port and is travelling owards but has not yet reached the destination port. </p>
-<p>It is divided into two swim lanes the ship perspective and individual container perspectives. The ship perspective includes events relating to the entire ship:
-<em> leaving port.
-</em> reporting its current position.
-* deciding to alter planned course to avoid a weather event.</p>
+<p>It is divided into two swim lanes the ship perspective and individual container perspectives. The ship perspective includes events relating to the entire ship:</p>
+<ul>
+<li>leaving port.</li>
+<li>reporting its current position.</li>
+<li>deciding to alter planned course to avoid a weather event.</li>
+</ul>
 <p>The upper swim lane capture events which are specific to a particular container.
 <em> container sensors reporting on geolocation.
 </em> refrigerated container sensors reporting on humidity, carbon dioxide,  temperature in the container and power consumption of the refrigeration unit.</p>
 <h4 id="container-shipping-event-timeline-sections-6-and-7">Container shipping event timeline sections 6 and 7</h4>
-<p><img src="ship-dom-evt6.png" width="700"></p>
+<p><img alt="ship-dom-evt6" src="../ship-dom-evt6.png" /></p>
 <p>The remining event time line segments 6 and 7 deal with arrival at the destination port unload of the container and delivery to the Retailer's location. At the level of simplification in the reference architecture example, the steps for unloading a container at the destination port, clearing Customs and delivering it to are Retailer location are the symmetric image of the steps to pick up the container from the Manufacture location, clear it through export permissions and load onto the ship. </p>
 <p>For these reason we just provide event timeline digrams for these steps withou going into further explanatory detail. </p>
-<p><img src="ship-dom-evt7.png" width="700"></p>
-<h3 id="event-storming-the-container-shipment-example-part-2-identify-commands-and-event-linkages">Event storming the container shipment example part 2:  identify commands and event linkages</h3>
-<p>(This section of the example description covers activities identified as event storming workshop steps 4,5) in the generic description of the <a href="https://github.com/ibm-cloud-architecture/refarch-eda/blob/master/docs/methodology/readme.md">event storming method</a> . )</p>
-<p>After capturing all events for the scenario and organizing them in a time line, the next step in event storming analysis is to identify the triggers for events and causal linkages between events.  </p>
+<p><img alt="ship-dom-evt7" src="../ship-dom-evt7.png" /></p>
+<h3 id="step-2-identify-commands-and-event-linkages">Step 2: Identify commands and event linkages</h3>
+<blockquote>
+<p>This section of the example description covers activities identified as event storming workshop steps 4,5) in the generic description of the <a href="https://www.ibm.com/cloud/garage/architectures/eventDrivenArchitecture/event-storming-methodology">event storming method</a>.</p>
+</blockquote>
+<p>After capturing all events for the scenario and organizing them in a time line, the next step in event storming analysis is to identify the triggers for events and causal linkages between events. </p>
 <p>For each identified event in the timeline we ask "What triggered this event to occur?". Expected event trigger types are:
 <em> A human operator makes a decision and issues a command.
 </em> Some external system or sensor provides a stimulus.
@@ -264,20 +923,22 @@ In the following dockside phase there are interactions with Customs Officer to g
 <p>For events trigerred by processing of some precursor events the trigerring policy explaining when and why this event occurs is summarized in a lilac colored note. Specific causal event linkages are added to the event storming diagram as blue directed (arrow) linkages.</p>
 <p>In the following subsections we show the results of command and event linkage analysis for some selected areas of the container shipping example.</p>
 <h4 id="container-shipping-commands-for-order-placement-and-land-transport-setup">Container shipping Commands for order placement and land transport setup</h4>
-<p><img src="ship-dom-cmd1.png" width="700"></p>
+<p><img alt="ship-dom-cmd1" src="../ship-dom-cmd1.png" /></p>
 <p>This diagram shows the command, agent issuing events and policies triggering events for the order placement and land transport set up (at manufacturer location) sections of the event timeline generated in step 1</p>
 <h4 id="container-shipping-event-linkages-for-order-placement-setup">Container shipping  event linkages for order placement setup</h4>
-<p><img src="ship-dom-cmd1.2.png" width="700"></p>
-<p>The above diagram adds event linkages showing the causality chaining of events.</p>
+<p><img alt="ship-dom-cmd1.2" src="../ship-dom-cmd1.2.png" /></p>
+<p>The above diagram adds event linkages showing the causality chaining of events and business rules.</p>
 <h4 id="container-shipping-commands-for-pickup-at-manufacturers-location">Container shipping commands for pickup at Manufacturer's location</h4>
-<p><img src="ship-dom-cmd2.png" width="700"></p>
+<p><img alt="ship-dom-cmd2" src="../ship-dom-cmd2.png" /></p>
 <p>The above diagram is generated for the command and policies associated with pick up of a loaded container from the Manufacturer's location and delivery to the source port dockside.</p>
 <h4 id="container-shipping-commands-in-port-to-port-blue-water-section-of-the-event-time-line">Container shipping commands in port to port (Blue water) section of the event time line</h4>
 <p>The diagram is self explanatory.</p>
-<p><img src="ship-dom-cmd3.png" width="700"></p>
-<h3 id="event-storming-the-container-shipment-example-part-3-decision-data-predictive-insights-and-insight-storming">Event storming the container shipment example part 3: Decision data, predictive insights and insight storming:</h3>
-<p>(This section of the example description covers activities identified as event storming workshop step 8) in the generic description of the <a href="https://github.com/ibm-cloud-architecture/refarch-eda/blob/master/docs/methodology/readme.md">event storming method</a>.</p>
-<p>Insight storming is extending the event storming workshop to identify and capture insightful predictive analytics, and it is introduced and described in <a href="https://github.com/ibm-cloud-architecture/refarch-eda/tree/master/docs/methodology/readme.md">workshop execution Step 8 - Insight</a>. </p>
+<p><img alt="ship-dom-cmd3" src="../ship-dom-cmd3.png" /></p>
+<h3 id="step-3-decision-data-predictive-insights-and-insight-storming">Step 3: Decision data, predictive insights and insight storming:</h3>
+<blockquote>
+<p>This section of the example description covers activities identified as event storming workshop step 8 in the generic description of the <a href="https://www.ibm.com/cloud/garage/architectures/eventDrivenArchitecture/event-storming-methodology">event storming method</a>.</p>
+</blockquote>
+<p>Insight storming is extending the event storming workshop to identify and capture insightful predictive analytics, and it is introduced and described in <a href="https://www.ibm.com/cloud/garage/architectures/eventDrivenArchitecture/event-storming-methodology">workshop execution Step 8 - Insight</a>. </p>
 <p>Predictive analytic insights are effectively probabilistic statements about which future events are likely to occur and what are the like properties of those events. They are typicaly generated using models created by data scientists or using artificial intelligence (AI) or machine learning (ML).  Business owners and stakeholders in the event driven solution have good intuitions on:
 <em> Which probabilistic insights are likely to lead to better decision making and action when a particular event occurs.
 </em> What sources of information are likely to help create a model to predict this insight.</p>
@@ -290,18 +951,22 @@ In the following dockside phase there are interactions with Customs Officer to g
 <h4 id="container-shipping-event-stream-processing-diagram-including-event-stream-processing-flows">Container shipping event stream processing diagram - including event stream processing flows</h4>
 <p>The shipping example includes the case where continuous sensor measurement data is available from each refrigerated container while it is stacked on board the container ship and is in between ports on a blue water phase of the scenario. We show how streaming analytics can process the arriving continuous sensor measures in real-time and to deliver additional capabilites in the EDA solution. </p>
 <p>A diagram for this flow generated from Insight storming is shown below. </p>
-<p><img src="ship-dom-insight1.png" width="700"></p>
+<p><img alt="ship-dom-insight1" src="../ship-dom-insight1.png" /></p>
 <p>In this diagram it is made clear the delivery of measured temperature, probably GPS position, and power consumption of the refrigeration unit for that container is a recurring "continuous" event stream. Each container might report once a minute; this ensures that an auditable record of container temperature is available from the event backbone or event sourcing.</p>
 <p>We show a policy test to decide whether the temperature has gone outside the specified range committed to in that shipment contract for the goods in that container. If this violation has occured, this is an (unusual) alert event reporting that temperature has gone out of range.
 This information is available as data to subject matter expert's dashboard seen by the shipping company operator who must make the business decision whether the contents of the container are spoiled. It is likely that involvement of human operator is necessary since this is a business decision with possibly significant $ consequences. It is possible that a bad sensor reading could have been received or that in this contract violation of the temperature range for a very short interval of time is permissable. </p>
 <p>Some stateful analysis of the container temperature reports would make the readings more reliable; perhaps there need to be more than one out of range reading to issue the alert to avoid corrupted data false positives.</p>
-<p>If the business decision is made that the container's contents are spoiled:
-<em> A command is invoked to act on this decision.
-</em> The container refrigeration may be powered down (possible other sensing left active)
-* A policy based on terms and class of service of this particular shipment will determine:
-    * Whether a replacement shipment will be initiated and booked 
-    * Usually shipping and receiving parties need to be notified
-    * The shipping company will schedule some salvage or disposal action for the content of the container at next port</p>
+<p>If the business decision is made that the container's contents are spoiled:</p>
+<ul>
+<li>A command is invoked to act on this decision.</li>
+<li>The container refrigeration may be powered down (possible other sensing left active)</li>
+<li>A policy based on terms and class of service of this particular shipment will determine:<ul>
+<li>Whether a replacement shipment will be initiated and booked </li>
+<li>Usually shipping and receiving parties need to be notified</li>
+<li>The shipping company will schedule some salvage or disposal action for the content of the container at next port</li>
+</ul>
+</li>
+</ul>
 <p>Each of the actions above will be an event captured in the event backbone - trigerring further loosely coupled commands and policies to take defined actions.  </p>
 <h4 id="container-shipping-event-stream-processing-with-predictive-insight-flows-included">Container shipping event stream processing with predictive Insight flows included</h4>
 <p>The previous section defines how event stream processing could detect when a shipment was spoiled and trigger recovery actions. But shipping experts in an insight storming session will note that it is much better to predict when a spoilage temperature event is <strong>likely to occur</strong> and to take automated immediate (real-time) action to avert the spoilage.</p>
@@ -309,60 +974,93 @@ This information is available as data to subject matter expert's dashboard seen 
 <p>More complex models for predicting temperature, could take into account diurnal variation due to external temperatures, possible predicted external temperatures forecast for the current course of the ship, and whether ther container is stacked above deck and hence particularly exposed to external temperatures. </p>
 <p>We assume that possible corrective action includes resetting the thermostatic controls on the refrigeration unit for the cotainer, possibly resetting the controls which may have drifted from their calibrated settings... </p>
 <p>An insight storming diagram which could be generated from discussion of these potentially useful insights and predictions is shown in the diagram below. </p>
-<p><img src="ship-dom-insight2.png" width="700"></p>
+<p><img alt="ship-dom-insight2" src="../ship-dom-insight2.png" /></p>
 <p>We have added an additional insight - namely that it may be possible to predict from the temperature observed in a container and the trend of power consumption of that refrigeration unit, that the unit is in danger of failing and should be inspected and possibly services as soon as possible. </p>
 <p>Insights about predicted risk of temperature based spoilage, and prediction of refrigeration unit  probable need for maintenance are presented in light blue. These are probabilistic prediction for properties and likely occurence of future events. Loose coupling and reuse of these insights by allowing publish subscribe to insight topics is helpful.  Insights are conceptually different from events since they are probabilistic predictions for the future rather than events which by definition have already happened at some specific point in time. </p>
 <h4 id="event-stream-processing-for-insights-relating-to-the-ship">Event stream processing for insights relating to the ship</h4>
-<p><img src="ship-dom-insight3.png" width="700"></p>
-<h3 id="event-storming-the-container-shipment-example-part-4-commands-linkages-data-and-context-for-order-placement">Event storming the container shipment example part 4:  Commands, linkages, data and context for order placement</h3>
-<p>(This section of the example description covers activities identified as EventStorming Workshop steps 6,7) in the generic description of the <a href="https://github.com/ibm-cloud-architecture/refarch-eda/blob/master/docs/methodology/readme.md">event storming method</a> . )</p>
+<p><img alt="ship-dom-insight3" src="../ship-dom-insight3.png" /></p>
+<h3 id="step-4-commands-linkages-data-and-context-for-order-placement">Step 4: Commands, linkages, data and context for order placement</h3>
+<blockquote>
+<p>This section of the example description covers activities identified as EventStorming Workshop steps 6,7 in the generic description of the <a href="https://www.ibm.com/cloud/garage/architectures/eventDrivenArchitecture/event-storming-methodology">event storming method</a>.</p>
+</blockquote>
 <p>In particular, we look at identifying bounded contexts and identifying aggregates which will lead to a loosely coupled collection of microservices providing an agile EDA design for the example. </p>
 <p>We drill down on understanding the order placement process when a container shipment is booked as the MVP context focus in which to explore our design at the next level of detail. </p>
-<p><img src="ship-aggr-transport-quote.png" width="700"> </p>
-<p><img src="ship-aggr-shipment.png" width="700"></p>
-<p><img src="ship-aggr-transp.png" width="700"></p>
+<p><img alt="ship-aggr-transport-quote" src="../ship-aggr-transport-quote.png" /></p>
+<p><img alt="ship-aggr-shipment" src="../ship-aggr-shipment.png" /></p>
+<p><img alt="ship-aggr-transp" src="../ship-aggr-transp.png" /></p>
+                
+                  
+                
               
-            </div>
+              
+                
+
+
+              
+            </article>
           </div>
-          <footer>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="../../introduction/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../introduction/" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Introduction
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../design/readme/" title="Design considerations and microservice identifications" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Design considerations and microservice identifications
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
     </div>
   
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
   </div>
-
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" style="cursor: pointer">
-    <span class="rst-current-version" data-toggle="rst-current-version">
+    </div>
+    
+      <script src="../../assets/javascripts/application.b806dc00.js"></script>
       
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
-        <span><a href="../../introduction/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-    </span>
-</div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
-
-</body>
+    
+  </body>
 </html>
